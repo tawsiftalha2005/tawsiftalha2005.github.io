@@ -38,6 +38,13 @@ h2{font:700 clamp(2rem,5vw,3.1rem) "Space Grotesk";margin:9px 0 12px}.section-he
 .timeline{display:grid;gap:18px}.time-row{display:grid;grid-template-columns:150px 1fr;gap:22px}.time{color:var(--a);font-weight:700}.time-card{padding:22px;border-left:2px solid rgba(98,220,255,.35)}
 .contact{display:grid;grid-template-columns:1fr 1fr;gap:20px}.contact-item{padding:24px;border-radius:20px;border:1px solid var(--line);background:rgba(255,255,255,.025)}.contact-item .label{color:var(--muted);font-size:.83rem}.contact-item .value{margin-top:7px;font-weight:700}
 footer{padding:34px 0 50px;color:var(--muted);border-top:1px solid var(--line);text-align:center}
+.contact-form-wrap{max-width:860px;margin:auto;padding:30px;border:1px solid var(--line);border-radius:26px;background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.022));box-shadow:0 22px 65px rgba(0,0,0,.22)}
+.contact-form{display:grid;gap:18px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.contact-form label{display:grid;gap:8px}.contact-form label span{font-size:.82rem;color:var(--muted);font-weight:600}
+.contact-form input,.contact-form textarea{width:100%;border:1px solid var(--line);outline:none;background:rgba(255,255,255,.035);color:var(--text);padding:14px 15px;border-radius:14px;font:inherit;transition:.2s}
+.contact-form input::placeholder,.contact-form textarea::placeholder{color:#728299}.contact-form input:focus,.contact-form textarea:focus{border-color:rgba(98,220,255,.55);box-shadow:0 0 0 3px rgba(98,220,255,.08)}
+.contact-form textarea{resize:vertical;min-height:165px}.form-note{margin:0;color:var(--muted);font-size:.88rem;min-height:20px}
+@media(max-width:700px){.form-grid{grid-template-columns:1fr}.contact-form-wrap{padding:20px}}
 .social-dock{position:fixed;left:18px;bottom:20px;z-index:60;display:flex;flex-direction:column;gap:10px}
 .social-dock a{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;text-decoration:none;color:#f5f8fc;
 background:rgba(7,17,31,.82);border:1px solid rgba(255,255,255,.11);backdrop-filter:blur(12px);
@@ -73,7 +80,7 @@ box-shadow:0 10px 26px rgba(0,0,0,.25);transition:transform .2s ease, border-col
       <div class="eyebrow">Software Engineering Student</div>
       <h1>Md. Wahid<br><span class="grad">Tawsif Talha</span></h1>
       <p class="lead">I am a <span class="typing" id="typed"></span><span class="cursor">|</span> building my skills in programming, problem solving, and software development.</p>
-      <div class="actions"><a class="btn primary" href="#projects">View Projects ↗</a><a class="btn secondary" href="CV.pdf" download>Download CV ↓</a><a class="btn secondary" href="mailto:mwt.talha@gmail.com">Let's Connect</a></div>
+      <div class="actions"><a class="btn primary" href="#projects">View Projects ↗</a><a class="btn secondary" href="CV.pdf" download>Download CV ↓</a><a class="btn secondary" href="#contact">Let's Connect ↓</a></div>
     </div>
     <div class="hero-visual reveal">
       <div class="ring r1"></div><div class="ring r2"></div>
@@ -119,15 +126,27 @@ box-shadow:0 10px 26px rgba(0,0,0,.25);transition:transform .2s ease, border-col
   </div>
 </div></section>
 
-<section id="contact"><div class="container reveal">
-  <div class="section-head"><div class="kicker">Contact</div><h2>Let's build something useful.</h2><p>Open to Software/IT internship opportunities and collaborative learning projects.</p></div>
-  <div class="contact">
-    <div class="contact-item"><div class="label">Email</div><div class="value">mwt.talha@gmail.com</div></div>
-    <div class="contact-item"><div class="label">Location</div><div class="value">Dhaka, Bangladesh</div></div>
-    <div class="contact-item"><div class="label">GitHub</div><div class="value"><a href="https://github.com/tawsiftalha2005" target="_blank" rel="noreferrer">github.com/tawsiftalha2005 ↗</a></div></div>
-    <div class="contact-item"><div class="label">CV</div><div class="value"><a href="CV.pdf" download>Download my CV ↙</a></div></div>
+<section id="contact">
+  <div class="container reveal">
+    <div class="section-head">
+      <div class="kicker">Contact</div>
+      <h2>Let's talk.</h2>
+      <p>Have an internship opportunity, project idea, or question? Send me a message using the form below.</p>
+    </div>
+    <div class="contact-form-wrap">
+      <form class="contact-form" id="contactForm">
+        <div class="form-grid">
+          <label><span>Your Name</span><input type="text" name="name" placeholder="Enter your name" required></label>
+          <label><span>Your Email</span><input type="email" name="email" placeholder="Enter your email" required></label>
+        </div>
+        <label><span>Subject</span><input type="text" name="subject" placeholder="What is this about?" required></label>
+        <label><span>Message</span><textarea name="message" rows="7" placeholder="Write your message..." required></textarea></label>
+        <button class="btn primary" type="submit">Send Message ↗</button>
+        <p class="form-note" id="formNote" aria-live="polite"></p>
+      </form>
+    </div>
   </div>
-</div></section>
+</section>
 </main>
 
 
@@ -153,6 +172,18 @@ links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.clas
 window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>15);backTop.classList.toggle('show',scrollY>500)});
 const words=['Software Engineering Student','Aspiring Software Engineer','Java Developer','Problem Solver'];let wi=0,ci=0,deleting=false;
 function type(){const el=document.getElementById('typed'),w=words[wi];el.textContent=deleting?w.slice(0,ci--):w.slice(0,ci++);if(!deleting&&ci>w.length){deleting=true;setTimeout(type,900);return}if(deleting&&ci<0){deleting=false;wi=(wi+1)%words.length;ci=0}setTimeout(type,deleting?40:80)}type();
+
+const contactForm=document.getElementById('contactForm');
+const formNote=document.getElementById('formNote');
+contactForm.addEventListener('submit',(e)=>{
+  e.preventDefault();
+  const data=new FormData(contactForm);
+  const name=data.get('name').trim(), email=data.get('email').trim(), subject=data.get('subject').trim(), message=data.get('message').trim();
+  if(!name||!email||!subject||!message){formNote.textContent='Please complete all fields.';return}
+  const body=`Name: ${name}\nEmail: ${email}\n\n${message}`;
+  window.location.href=`mailto:mwt.talha@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  formNote.textContent='Opening your email app…';
+});
 const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 </script>
 </body>
