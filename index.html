@@ -15,7 +15,7 @@ body{margin:0;background:radial-gradient(circle at 10% 10%,rgba(98,220,255,.11),
 body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.6;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:38px 38px}
 a{color:inherit}.container{width:min(1120px,calc(100% - 40px));margin:auto}
 .nav{position:fixed;inset:0 0 auto;z-index:50;border-bottom:1px solid transparent;transition:.25s}.nav.scrolled{background:rgba(7,17,31,.8);backdrop-filter:blur(16px);border-color:var(--line)}
-.nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between}.brand{font:700 1.08rem "Space Grotesk";text-decoration:none;letter-spacing:.04em}.brand span{color:var(--a)}
+.nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between}.brand{font:800 1rem "Space Grotesk";text-decoration:none;letter-spacing:.12em}.brand span{color:var(--a)}
 .nav-links{display:flex;gap:26px}.nav-links a{text-decoration:none;color:var(--muted);font-size:.92rem}.nav-links a:hover{color:var(--text)}
 .menu{display:none;background:none;border:1px solid var(--line);color:var(--text);padding:9px 11px;border-radius:10px}
 .hero{min-height:100vh;display:grid;align-items:center;padding:120px 0 70px;position:relative}.hero-grid{display:grid;grid-template-columns:1.14fr .86fr;gap:60px;align-items:center}
@@ -24,9 +24,9 @@ h1{font:700 clamp(3.2rem,7vw,6.5rem)/.96 "Space Grotesk";margin:18px 0}
 .grad{background:linear-gradient(110deg,var(--a),#fff,var(--b),var(--a));background-size:240% auto;-webkit-background-clip:text;color:transparent;animation:shine 5s linear infinite}
 .lead{font-size:1.15rem;line-height:1.75;color:var(--muted);max-width:700px}.typing{color:var(--text);font-weight:700}.cursor{display:inline-block;color:var(--a);animation:blink .85s infinite}
 .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;padding:13px 18px;border-radius:999px;border:1px solid var(--line);font-weight:700;transition:.25s}.btn.primary{background:linear-gradient(120deg,var(--a),var(--b));color:#07111f;border:none}.btn:hover{transform:translateY(-3px)}.btn.secondary{background:rgba(255,255,255,.03)}
-.hero-visual{min-height:420px;display:grid;place-items:center;position:relative}.orb{width:330px;height:330px;border-radius:50%;background:radial-gradient(circle at 35% 25%,#d7f9ff 0 4%,#62dcff 16%,#7a67ff 46%,rgba(122,103,255,.04) 68%);filter:drop-shadow(0 0 55px rgba(98,220,255,.3));animation:float 5.5s ease-in-out infinite}
+.hero-visual{min-height:430px;display:grid;place-items:center;position:relative;padding:12px 20px 20px}.orb{width:330px;height:330px;border-radius:50%;background:radial-gradient(circle at 35% 25%,#d7f9ff 0 4%,#62dcff 16%,#7a67ff 46%,rgba(122,103,255,.04) 68%);filter:drop-shadow(0 0 55px rgba(98,220,255,.3));animation:float 5.5s ease-in-out infinite}
 .ring{position:absolute;border:1px solid rgba(98,220,255,.24);border-radius:50%;animation:spin 18s linear infinite}.ring.r1{width:390px;height:390px}.ring.r2{width:470px;height:470px;animation-direction:reverse;animation-duration:24s}
-.profile-frame{width:320px;height:320px;border-radius:22px;padding:6px;background:linear-gradient(135deg,var(--a),var(--b));box-shadow:0 0 55px rgba(98,220,255,.24);animation:float 5.5s ease-in-out infinite;position:relative;z-index:2;overflow:hidden}.profile-frame:after{content:"";position:absolute;inset:7px;border:1px solid rgba(255,255,255,.22);border-radius:16px;pointer-events:none}.profile-frame img{width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:16px;display:block}.code-card{position:absolute;bottom:30px;right:0;width:245px;padding:16px;border:1px solid var(--line);border-radius:18px;background:rgba(7,17,31,.72);backdrop-filter:blur(12px)}.code-card small{color:var(--muted)}.code-card strong{display:block;margin-top:6px}
+.profile-frame{width:320px;height:320px;border-radius:22px;padding:6px;background:linear-gradient(135deg,var(--a),var(--b));box-shadow:0 0 55px rgba(98,220,255,.24);animation:float 5.5s ease-in-out infinite;position:relative;z-index:2;overflow:hidden}.profile-frame:after{content:"";position:absolute;inset:7px;border:1px solid rgba(255,255,255,.22);border-radius:16px;pointer-events:none}.profile-frame img{width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:16px;display:block}.code-card{display:none;position:absolute;bottom:30px;right:0;width:245px;padding:16px;border:1px solid var(--line);border-radius:18px;background:rgba(7,17,31,.72);backdrop-filter:blur(12px)}.code-card small{color:var(--muted)}.code-card strong{display:block;margin-top:6px}
 section{padding:95px 0}.section-head{margin-bottom:38px}.kicker{color:var(--a);font-size:.76rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
 h2{font:700 clamp(2rem,5vw,3.1rem) "Space Grotesk";margin:9px 0 12px}.section-head p{color:var(--muted);max-width:740px;line-height:1.75}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}.card{padding:26px;border-radius:22px;background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.025));border:1px solid var(--line);box-shadow:0 18px 50px rgba(0,0,0,.16)}
@@ -66,7 +66,7 @@ box-shadow:0 10px 26px rgba(0,0,0,.25);transition:transform .2s ease, border-col
 <body>
 <nav class="nav" id="nav">
   <div class="container nav-inner">
-    <a class="brand" href="#home">Tawsif<span>.</span>dev</a>
+    <a class="brand" href="#home">TAWSIF <span>TALHA</span></a>
     <button class="menu" id="menu" aria-label="Open menu">☰</button>
     <div class="nav-links" id="navLinks">
       <a href="#home">Home</a><a href="#about">About</a><a href="#resume">Resume</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a>
@@ -86,7 +86,6 @@ box-shadow:0 10px 26px rgba(0,0,0,.25);transition:transform .2s ease, border-col
     <div class="hero-visual reveal">
       <div class="ring r1"></div><div class="ring r2"></div>
       <div class="profile-frame"><img src="profile.jpg" alt="Md. Wahid Tawsif Talha"></div>
-      <div class="code-card"><small>Currently learning</small><strong>C • C++ • Java • OOP • DSA</strong></div>
     </div>
   </div>
 </header>
