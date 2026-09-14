@@ -26,7 +26,7 @@ h1{font:700 clamp(3.2rem,7vw,6.5rem)/.96 "Space Grotesk";margin:18px 0}
 .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;padding:13px 18px;border-radius:999px;border:1px solid var(--line);font-weight:700;transition:.25s}.btn.primary{background:linear-gradient(120deg,var(--a),var(--b));color:#07111f;border:none}.btn:hover{transform:translateY(-3px)}.btn.secondary{background:rgba(255,255,255,.03)}
 .hero-visual{min-height:420px;display:grid;place-items:center;position:relative}.orb{width:330px;height:330px;border-radius:50%;background:radial-gradient(circle at 35% 25%,#d7f9ff 0 4%,#62dcff 16%,#7a67ff 46%,rgba(122,103,255,.04) 68%);filter:drop-shadow(0 0 55px rgba(98,220,255,.3));animation:float 5.5s ease-in-out infinite}
 .ring{position:absolute;border:1px solid rgba(98,220,255,.24);border-radius:50%;animation:spin 18s linear infinite}.ring.r1{width:390px;height:390px}.ring.r2{width:470px;height:470px;animation-direction:reverse;animation-duration:24s}
-.profile-frame{width:300px;height:360px;border-radius:34% 34% 20% 20%;padding:7px;background:linear-gradient(135deg,var(--a),var(--b));box-shadow:0 0 55px rgba(98,220,255,.26);animation:float 5.5s ease-in-out infinite;position:relative;z-index:2;overflow:hidden}.profile-frame:after{content:"";position:absolute;inset:8px;border:1px solid rgba(255,255,255,.28);border-radius:31% 31% 18% 18%;pointer-events:none}.profile-frame img{width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:30% 30% 16% 16%;display:block}.code-card{position:absolute;bottom:30px;right:0;width:245px;padding:16px;border:1px solid var(--line);border-radius:18px;background:rgba(7,17,31,.72);backdrop-filter:blur(12px)}.code-card small{color:var(--muted)}.code-card strong{display:block;margin-top:6px}
+.profile-frame{width:320px;height:320px;border-radius:22px;padding:6px;background:linear-gradient(135deg,var(--a),var(--b));box-shadow:0 0 55px rgba(98,220,255,.24);animation:float 5.5s ease-in-out infinite;position:relative;z-index:2;overflow:hidden}.profile-frame:after{content:"";position:absolute;inset:7px;border:1px solid rgba(255,255,255,.22);border-radius:16px;pointer-events:none}.profile-frame img{width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:16px;display:block}.code-card{position:absolute;bottom:30px;right:0;width:245px;padding:16px;border:1px solid var(--line);border-radius:18px;background:rgba(7,17,31,.72);backdrop-filter:blur(12px)}.code-card small{color:var(--muted)}.code-card strong{display:block;margin-top:6px}
 section{padding:95px 0}.section-head{margin-bottom:38px}.kicker{color:var(--a);font-size:.76rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
 h2{font:700 clamp(2rem,5vw,3.1rem) "Space Grotesk";margin:9px 0 12px}.section-head p{color:var(--muted);max-width:740px;line-height:1.75}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}.card{padding:26px;border-radius:22px;background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.025));border:1px solid var(--line);box-shadow:0 18px 50px rgba(0,0,0,.16)}
@@ -59,8 +59,9 @@ box-shadow:0 10px 26px rgba(0,0,0,.25);transition:transform .2s ease, border-col
 .back-top{position:fixed;right:20px;bottom:20px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:rgba(7,17,31,.82);color:var(--text);display:grid;place-items:center;opacity:0;pointer-events:none;transition:.25s;z-index:40;text-decoration:none}.back-top.show{opacity:1;pointer-events:auto}
 @keyframes float{50%{transform:translateY(-16px) scale(1.03)}}@keyframes spin{to{transform:rotate(360deg)}}@keyframes shine{to{background-position:240% center}}@keyframes blink{50%{opacity:0}}
 @media(max-width:860px){.hero-grid,.grid2,.contact{grid-template-columns:1fr}.hero{text-align:center}.actions{justify-content:center}.hero-visual{min-height:360px}.code-card{right:10%;bottom:8px}.nav-links{display:none;position:absolute;top:76px;left:20px;right:20px;padding:14px;flex-direction:column;gap:14px;background:rgba(7,17,31,.95);border:1px solid var(--line);border-radius:16px}.nav-links.open{display:flex}.menu{display:block}.skill-grid{grid-template-columns:repeat(2,1fr)}.time-row{grid-template-columns:1fr;gap:8px}}
-@media(max-width:520px){.container{width:min(100% - 28px,1120px)}section{padding:78px 0}h1{font-size:3rem}.orb{width:240px;height:240px}.profile-frame{width:230px;height:280px}.ring.r1{width:300px;height:300px}.ring.r2{width:350px;height:350px}.code-card{position:relative;right:auto;bottom:auto;margin-top:-35px;width:220px}.stats,.skill-grid{grid-template-columns:1fr}}
+@media(max-width:520px){.container{width:min(100% - 28px,1120px)}section{padding:78px 0}h1{font-size:3rem}.orb{width:240px;height:240px}.profile-frame{width:240px;height:240px}.ring.r1{width:300px;height:300px}.ring.r2{width:350px;height:350px}.code-card{position:relative;right:auto;bottom:auto;margin-top:-35px;width:220px}.stats,.skill-grid{grid-template-columns:1fr}}
 </style>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 <body>
 <nav class="nav" id="nav">
@@ -163,7 +164,7 @@ box-shadow:0 10px 26px rgba(0,0,0,.25);transition:transform .2s ease, border-col
 </div>
 
 <a class="back-top" id="backTop" href="#home" aria-label="Back to top">↑</a>
-<footer>© 2026 Md. Wahid Tawsif Talha · Built with HTML, CSS & JavaScript · GitHub Pages</footer>
+<footer>© 2026 Md. Wahid Tawsif Talha</footer>
 
 <script>
 const nav=document.getElementById('nav'),menu=document.getElementById('menu'),links=document.getElementById('navLinks'),backTop=document.getElementById('backTop');
