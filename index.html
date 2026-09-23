@@ -9,15 +9,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#07111f;--panel:#0b1829;--text:#f5f8fc;--muted:#9fb0c5;--line:rgba(255,255,255,.09);--a:#62dcff;--b:#7a67ff}
+:root{--bg:#07111f;--panel:#0b1829;--text:#f5f8fc;--muted:#9fb0c5;--line:rgba(255,255,255,.09);--a:#62dcff;--b:#7a67ff;--navbg:rgba(7,17,31,.8);--grid:rgba(255,255,255,.022);--glass:rgba(255,255,255,.035)}
+body.light{--bg:#f4f8fc;--panel:#ffffff;--text:#132033;--muted:#5e6d80;--line:rgba(19,32,51,.12);--a:#087ea4;--b:#5b4fd4;--navbg:rgba(244,248,252,.82);--grid:rgba(19,32,51,.045);--glass:rgba(19,32,51,.035)}
 *{box-sizing:border-box;scroll-behavior:smooth}html{scroll-padding-top:88px}
-body{margin:0;background:radial-gradient(circle at 10% 10%,rgba(98,220,255,.11),transparent 24%),radial-gradient(circle at 90% 18%,rgba(122,103,255,.12),transparent 26%),var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.6;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:38px 38px}
+body{margin:0;background:radial-gradient(circle at 10% 10%,rgba(98,220,255,.11),transparent 24%),radial-gradient(circle at 90% 18%,rgba(122,103,255,.12),transparent 26%),var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;overflow-x:hidden;transition:background .35s ease,color .35s ease}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.6;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:38px 38px}
 a{color:inherit}.container{width:min(1120px,calc(100% - 40px));margin:auto}
-.nav{position:fixed;inset:0 0 auto;z-index:50;border-bottom:1px solid transparent;transition:.25s}.nav.scrolled{background:rgba(7,17,31,.8);backdrop-filter:blur(16px);border-color:var(--line)}
+.nav{position:fixed;inset:0 0 auto;z-index:50;border-bottom:1px solid transparent;transition:.25s}.nav.scrolled{background:var(--navbg);backdrop-filter:blur(16px);border-color:var(--line)}
 .nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between}.brand{font:800 1rem "Space Grotesk";text-decoration:none;letter-spacing:.12em}.brand span{color:var(--a)}
 .nav-links{display:flex;gap:26px}.nav-links a{text-decoration:none;color:var(--muted);font-size:.92rem}.nav-links a:hover{color:var(--text)}
-.menu{display:none;background:none;border:1px solid var(--line);color:var(--text);padding:9px 11px;border-radius:10px}
+.theme-toggle{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--glass);color:var(--text);display:grid;place-items:center;cursor:pointer;font-size:1.05rem;transition:.25s}.theme-toggle:hover{transform:rotate(12deg) scale(1.06);border-color:rgba(98,220,255,.5)}.theme-toggle .sun{display:none}.light .theme-toggle .moon{display:none}.light .theme-toggle .sun{display:inline}.menu{display:none;background:none;border:1px solid var(--line);color:var(--text);padding:9px 11px;border-radius:10px}
 .hero{min-height:100vh;display:grid;align-items:center;padding:120px 0 70px;position:relative}.hero-grid{display:grid;grid-template-columns:1.14fr .86fr;gap:60px;align-items:center}
 .eyebrow{color:var(--a);font-size:.78rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
 h1{font:700 clamp(3.2rem,7vw,6.5rem)/.96 "Space Grotesk";margin:18px 0}
@@ -64,6 +65,7 @@ box-shadow:0 0 35px rgba(98,220,255,.55);animation:pulseOrb 2.8s ease-in-out inf
 @keyframes particleTwo{50%{transform:translate(-35px,-25px) scale(.7)}}
 @media(max-width:700px){.profile-orb{width:240px;height:240px}}
 
+.hero-visual:before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:rgba(98,220,255,.16);filter:blur(65px);animation:heroGlow 4.5s ease-in-out infinite}.profile-orb em{font-style:normal;font:800 1.15rem "Space Grotesk";color:rgba(255,255,255,.9);text-shadow:0 0 18px rgba(98,220,255,.8);animation:codePulse 2.4s ease-in-out infinite}.hero-particle,.orbit-dot{position:absolute;border-radius:50%;background:var(--a);box-shadow:0 0 18px rgba(98,220,255,.85)}.hero-particle{width:5px;height:5px}.p1{top:17%;right:20%;animation:particleFloat 4s ease-in-out infinite}.p2{bottom:18%;left:16%;width:7px;height:7px;animation:particleFloat 5.2s ease-in-out infinite reverse}.p3{top:38%;left:9%;width:4px;height:4px;animation:particleFloat 3.4s ease-in-out infinite}.orbit-dot{width:8px;height:8px;z-index:3}.od1{animation:orbitOne 7s linear infinite}.od2{animation:orbitTwo 10s linear infinite}.hero-visual{isolation:isolate}.profile-orb{z-index:2}.ring{z-index:1}@keyframes heroGlow{50%{transform:scale(1.18);opacity:.72}}@keyframes codePulse{50%{transform:scale(1.12);opacity:.65}}@keyframes particleFloat{50%{transform:translate(18px,-24px) scale(1.5)}}@keyframes orbitOne{0%{transform:rotate(0deg) translateX(190px) rotate(0deg)}100%{transform:rotate(360deg) translateX(190px) rotate(-360deg)}}@keyframes orbitTwo{0%{transform:rotate(180deg) translateX(235px) rotate(-180deg)}100%{transform:rotate(540deg) translateX(235px) rotate(-540deg)}}
 .social-dock{position:fixed;left:18px;bottom:20px;z-index:60;display:flex;flex-direction:column;gap:10px}
 .social-dock a{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;text-decoration:none;color:#f5f8fc;
 background:rgba(7,17,31,.82);border:1px solid rgba(255,255,255,.11);backdrop-filter:blur(12px);
@@ -87,7 +89,7 @@ box-shadow:0 10px 26px rgba(0,0,0,.25);transition:transform .2s ease, border-col
 <nav class="nav" id="nav">
   <div class="container nav-inner">
     <a class="brand" href="#home">TAWSIF <span>TALHA</span></a>
-    <button class="menu" id="menu" aria-label="Open menu">☰</button>
+    <div style="display:flex;align-items:center;gap:10px"><button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode" title="Toggle theme"><span class="moon">☾</span><span class="sun">☀</span></button><button class="menu" id="menu" aria-label="Open menu">☰</button></div>
     <div class="nav-links" id="navLinks">
       <a href="#home">Home</a><a href="#about">About</a><a href="#resume">Resume</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a>
     </div>
@@ -105,7 +107,7 @@ box-shadow:0 10px 26px rgba(0,0,0,.25);transition:transform .2s ease, border-col
     </div>
     <div class="hero-visual reveal">
       <div class="ring r1"></div><div class="ring r2"></div>
-      <div class="profile-orb" aria-label="Animated software engineering visual"><span></span><i></i><b></b></div>
+      <div class="hero-particle p1"></div><div class="hero-particle p2"></div><div class="hero-particle p3"></div><div class="profile-orb" aria-label="Animated software engineering visual"><span></span><i></i><b></b><em>&lt;/&gt;</em></div><div class="orbit-dot od1"></div><div class="orbit-dot od2"></div>
     </div>
   </div>
 </header>
@@ -191,10 +193,14 @@ box-shadow:0 10px 26px rgba(0,0,0,.25);transition:transform .2s ease, border-col
 </div>
 
 <a class="back-top" id="backTop" href="#home" aria-label="Back to top">↑</a>
-<footer>© 2026 Md. Wahid Tawsif Talha</footer>
+<footer>@ Md. Wahid Tawsif Talha All Rights Reserved</footer>
 
 <script>
 const nav=document.getElementById('nav'),menu=document.getElementById('menu'),links=document.getElementById('navLinks'),backTop=document.getElementById('backTop');
+const themeToggle=document.getElementById('themeToggle');
+const savedTheme=localStorage.getItem('tawsif-theme');
+if(savedTheme==='light')document.body.classList.add('light');
+themeToggle.addEventListener('click',()=>{document.body.classList.toggle('light');localStorage.setItem('tawsif-theme',document.body.classList.contains('light')?'light':'dark')});
 menu.addEventListener('click',()=>links.classList.toggle('open'));
 links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
 window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>15);backTop.classList.toggle('show',scrollY>500)});
